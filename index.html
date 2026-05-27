@@ -188,34 +188,33 @@
     /* ── About ── */
     #about { background: var(--cream); }
 
-    #about .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
     .about-heading {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2.2rem, 4vw, 3.5rem);
       font-weight: 300;
       line-height: 1.15;
       color: var(--ink);
-      position: sticky;
-      top: 8rem;
+      margin-bottom: 3rem;
     }
 
     .about-heading em { font-style: italic; color: var(--terracotta); }
 
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
     .about-headshot {
-      width: 100%;
+      width: 220px;
       aspect-ratio: 4 / 5;
       object-fit: cover;
       object-position: center top;
       border-radius: 4px;
       display: block;
-      margin-top: 2rem;
       filter: grayscale(15%);
+      align-self: start;
     }
 
     .about-body p { color: var(--ink); margin-bottom: 1.5rem; font-size: 1.1rem; }
@@ -558,8 +557,9 @@
       #hero { padding: 0 1.8rem 4rem; }
       .hero-deco, .hero-scroll { display: none; }
       section { padding: 5rem 1.8rem; }
-      #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      #about .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-heading { position: static; }
+      .about-headshot { width: 160px; }
       .project-item { grid-template-columns: 1fr; }
       .project-num { display: none; }
       .writing-grid { grid-template-columns: 1fr; }
@@ -595,11 +595,11 @@
   <!-- ABOUT -->
   <section id="about">
     <p class="section-label reveal">About</p>
+    <div class="about-heading reveal">
+      <span contenteditable="false">Grounded in <em>human complexity</em></span>
+    </div>
     <div class="about-grid">
-      <div class="about-heading reveal">
-        <span contenteditable="false">Grounded<br />in <em>human<br />complexity</em></span>
-        <img class="about-headshot" src="images/Retouched.jpg" alt="Varshini Balaji" />
-      </div>
+      <img class="about-headshot reveal" src="images/Retouched.jpg" alt="Varshini Balaji" />
       <div class="about-body reveal">
         <p contenteditable="false">As an applied researcher and anthropologist who grew up across six countries, I am deeply invested in exploring questions of identity, culture, and difference. My work sits at the intersection of mixed-methods research, impact-driven storytelling, and design research. What drives me is complexity: questions that resist easy answers, thinking across scale, and the insights that emerge only at the edges of disciplines and backgrounds.</p>
         <div class="about-tags">
