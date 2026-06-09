@@ -121,12 +121,13 @@
 
     .hero-name {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(4rem, 9vw, 8.5rem);
+      font-size: clamp(2.8rem, 9vw, 8.5rem);
       font-weight: 300;
       line-height: 0.95;
       letter-spacing: -0.01em;
       color: var(--ink);
       margin-bottom: 2rem;
+      max-width: 100%;
     }
 
     .hero-name em { font-style: italic; color: var(--terracotta); }
@@ -445,6 +446,50 @@
     /* ── Writing ── */
     #writing { background: var(--cream); }
 
+    .writing-subsection { margin-bottom: 4rem; }
+    .writing-subsection:last-child { margin-bottom: 0; }
+
+    .writing-substack-callout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .writing-substack-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .writing-substack-btn {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--cream);
+      background: var(--terracotta);
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .writing-substack-btn:hover { background: var(--ink); }
+
+    .writing-sublabel {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
     .writing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -587,7 +632,8 @@
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.8rem; }
       .nav-links { gap: 1.5rem; }
-      #hero { padding: 0 1.8rem 4rem; }
+      #hero { padding: 6rem 1.2rem 3rem; }
+      .hero-name { font-size: clamp(2.4rem, 11vw, 5rem); white-space: normal; word-break: normal; overflow-wrap: normal; }
       .hero-deco, .hero-scroll { display: none; }
       section { padding: 5rem 1.8rem; }
       #about .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -621,7 +667,7 @@
     </h1>
     <p class="hero-tagline fade fade-3" contenteditable="false">Strategist &nbsp;·&nbsp; Researcher &nbsp;·&nbsp; Anthropologist</p>
     <div class="hero-deco fade fade-4"></div>
-    <span class="hero-scroll fade fade-4">Scroll</span>
+
   </section>
 
   <!-- ABOUT -->
@@ -755,72 +801,99 @@
   <!-- WRITING -->
   <section id="writing">
     <p class="section-label reveal">Writing</p>
-    <div class="writing-grid reveal">
 
-      <a class="writing-card" href="https://www.mindhatchllc.com/what-is-design-thinking-lets-bake-it-out/" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/Image 1.jpg" alt="Baking and design thinking" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">MindHatch</span>
-          <span class="writing-title" contenteditable="false">What is Design Thinking? Let's Bake It Out!</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+    <!-- Published Work -->
+    <div class="writing-subsection reveal">
+      <p class="writing-sublabel">Published Work</p>
+      <div class="writing-grid">
 
-      <a class="writing-card" href="https://www.mindhatchllc.com/5-reasons-abundance-mindset-collaboration/" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/Image 2.jpg" alt="Team collaboration" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">MindHatch</span>
-          <span class="writing-title" contenteditable="false">5 Reasons Why an Abundance Mindset will Make your Organizational Culture More Collaborative</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+        <a class="writing-card" href="https://www.mindhatchllc.com/what-is-design-thinking-lets-bake-it-out/" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Image 1.jpg" alt="Baking and design thinking" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">MindHatch</span>
+            <span class="writing-title" contenteditable="false">What is Design Thinking? Let's Bake It Out!</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
 
-      <a class="writing-card" href="https://www.mindhatchllc.com/5-dei-experts-do-now-equitable-workplace-culture/" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/Image 3.jpg" alt="DEI experts panel" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">MindHatch</span>
-          <span class="writing-title" contenteditable="false">What 5 DEI Experts Say You Should Do Right Now to Build an Equitable Workplace</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+        <a class="writing-card" href="https://www.mindhatchllc.com/5-reasons-abundance-mindset-collaboration/" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Image 2.jpg" alt="Team collaboration" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">MindHatch</span>
+            <span class="writing-title" contenteditable="false">5 Reasons Why an Abundance Mindset will Make your Organizational Culture More Collaborative</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
 
-      <a class="writing-card" href="https://www.channelkindness.org/interview-with-jaslin/" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/Image 4.png" alt="Jaslin Kaur" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">Channel Kindness</span>
-          <span class="writing-title" contenteditable="false">Jaslin Kaur on Community Organizing, Kindness, and Leading with Tenacity</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+        <a class="writing-card" href="https://www.mindhatchllc.com/5-dei-experts-do-now-equitable-workplace-culture/" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Image 3.jpg" alt="DEI experts panel" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">MindHatch</span>
+            <span class="writing-title" contenteditable="false">What 5 DEI Experts Say You Should Do Right Now to Build an Equitable Workplace</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
 
-      <a class="writing-card" href="https://www.channelkindness.org/nethra-samarawickrema-on-empathy/" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/Image 5.png" alt="Nethra Samarawickrema" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">Channel Kindness</span>
-          <span class="writing-title" contenteditable="false">Interview with Nethra Samarawickrema on Empathy, Kindness, and Facing the Unknown</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+        <a class="writing-card" href="https://www.channelkindness.org/interview-with-jaslin/" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Image 4.png" alt="Jaslin Kaur" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">Channel Kindness</span>
+            <span class="writing-title" contenteditable="false">Jaslin Kaur on Community Organizing, Kindness, and Leading with Tenacity</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
 
-      <a class="writing-card" href="https://www.goodgoodgood.co/articles/billie-melissa-death-penalty" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/melissa.jpeg" alt="Billie Melissa documentary team" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">Good Good Good</span>
-          <span class="writing-title" contenteditable="false">Interview with Billie Melissa: Abolishing the Death Penalty Through Storytelling</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+        <a class="writing-card" href="https://www.channelkindness.org/nethra-samarawickrema-on-empathy/" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Image 5.png" alt="Nethra Samarawickrema" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">Channel Kindness</span>
+            <span class="writing-title" contenteditable="false">Interview with Nethra Samarawickrema on Empathy, Kindness, and Facing the Unknown</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
 
-      <a class="writing-card" href="https://varshinibalaji.substack.com/p/rejecting-disposability-decolonial" target="_blank" rel="noopener">
-        <img class="writing-card-img" src="images/Image 6.png" alt="Rejecting Disposability illustration" />
-        <div class="writing-card-body">
-          <span class="writing-pub" contenteditable="false">Substack</span>
-          <span class="writing-title" contenteditable="false">Rejecting Disposability: Decolonial Love in Capitalist Ruins</span>
-          <span class="writing-read">Read article &rarr;</span>
-        </div>
-      </a>
+        <a class="writing-card" href="https://www.goodgoodgood.co/articles/billie-melissa-death-penalty" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/melissa.jpeg" alt="Billie Melissa documentary team" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">Good Good Good</span>
+            <span class="writing-title" contenteditable="false">Interview with Billie Melissa: Abolishing the Death Penalty Through Storytelling</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
 
+      </div>
     </div>
+
+    <!-- Personal Dispatches -->
+    <div class="writing-subsection reveal">
+      <p class="writing-sublabel">Personal Dispatches</p>
+      <div class="writing-substack-callout">
+        <span class="writing-substack-desc">Essays on what it costs to care and why it's worth it.</span>
+        <a class="writing-substack-btn" href="https://substack.com/@varshinibalaji" target="_blank" rel="noopener">Subscribe on Substack</a>
+      </div>
+      <div class="writing-grid">
+
+        <a class="writing-card" href="https://varshinibalaji.substack.com/p/on-refusing-to-grow-up" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Imagination.webp" alt="On Refusing to Grow Up illustration" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">Substack</span>
+            <span class="writing-title" contenteditable="false">On Refusing to "Grow Up"</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
+
+        <a class="writing-card" href="https://varshinibalaji.substack.com/p/rejecting-disposability-decolonial" target="_blank" rel="noopener">
+          <img class="writing-card-img" src="images/Image 6.png" alt="Rejecting Disposability illustration" />
+          <div class="writing-card-body">
+            <span class="writing-pub" contenteditable="false">Substack</span>
+            <span class="writing-title" contenteditable="false">Rejecting Disposability: Decolonial Love in Capitalist Ruins</span>
+            <span class="writing-read">Read article &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
   </section>
 
   <!-- CONTACT -->
